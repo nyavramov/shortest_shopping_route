@@ -2,12 +2,14 @@
 
 // Constructor definition
 Database::Database(string address, string username, string password) {
+
     mysql_init(&mysql);
     get_connection(address, username, password);
 }
 
 // Accepts credentials and attempts to connect to database
 void Database::get_connection(string address, string username, string password){
+
     connection = mysql_real_connect(&mysql,
                                     address.c_str(),
                                     username.c_str(),
@@ -57,7 +59,8 @@ int Database::get_food_aisle(string table_name, string column_name, string food_
 }
 
 //Delete a value from the database using provided table, column, and field
-void Database::delete_value_from_database(string table_name, string column_name, string field_name){
+void Database::delete_value_from_database(string table_name, string column_name, string field_name) {
+    
     // Compose the query string 
     string query = "DELETE from " + table_name + " where " + column_name + "=\"" + field_name + "\"";
 

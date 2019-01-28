@@ -1,4 +1,5 @@
 #include "database.hpp"
+
 /* 
 To run, link against mysql library:
     g++ `mysql_config --include` main.cpp database.cpp `mysql_config --libs` && ./a.out
